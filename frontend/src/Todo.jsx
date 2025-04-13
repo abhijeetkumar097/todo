@@ -41,7 +41,7 @@ function Todo() {
   }, [refresh]);
 
   return (
-    <div>
+    <div className="todo-container">
       <h1>Todo List</h1>
       <input value={text} onChange={(e) => setText(e.target.value)} />
       <button onClick={addOrEditTodo}>{editId ? 'Update' : 'Add'}</button>
@@ -49,13 +49,16 @@ function Todo() {
         {todos.map((todo) => (
           <li key={todo._id}>
             {todo.text}
-            <button onClick={() => editTodo(todo)}>Edit</button>
-            <button onClick={() => deleteTodo(todo._id)}>Delete</button>
+            <div>
+              <button onClick={() => editTodo(todo)}>Edit</button>
+              <button onClick={() => deleteTodo(todo._id)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>
     </div>
   );
+  
 }
 
 export default Todo 
