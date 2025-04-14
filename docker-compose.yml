@@ -21,6 +21,7 @@ services:
   
   backend:
     build: ./backend
+    image: aabhijeet097/todo-backend
     container_name: backend
     ports:
       - "5000:5000"
@@ -29,6 +30,7 @@ services:
 
   frontend:
     build: ./frontend
+    image: aabhijeet097/todo-frontend
     container_name: frontend
     ports:
       - "5173:5173"
