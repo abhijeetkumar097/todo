@@ -8,6 +8,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongo-data:/data/db 
 
   mongo-express:
     image: mongo-express
@@ -38,3 +40,5 @@ services:
     tty: true
     depends_on:
       - backend
+volumes:
+  mongo-data:
